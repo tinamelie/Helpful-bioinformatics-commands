@@ -3,6 +3,7 @@ Most of these will be built in utilities, but there will be the inclusion of som
 
 
 >[Count instances of a character in a file](#count-instances-of-a-character-in-a-file)
+>
 >[Print the length of each sequence in a fasta file](print-the-length-of-each-sequence-in-a-fasta-file)
 
 ## Count instances of a character in a file
