@@ -1,4 +1,5 @@
-# Helpful-commands
+# Helpful bioinformatics commands
+
 Most of these will be built in utilities, but there will be the inclusion of some other programs like bioawk
 
 
