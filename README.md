@@ -9,10 +9,14 @@ Most of these will be built in utilities, but there will be the inclusion of som
 
 ## Count instances of a character in a file
 ```
-sed 's/./&\n/g' inputfile.txt | sort | uniq -ic
+sed 's/./&\n/g' input.txt | sort | uniq -ic
 ```
 
 ## Print the length of each sequence in a fasta file
 ```
 bioawk -c fastx '{ print $name, length($seq) }' inputsequences.fasta
+```
+## Remove sequences from multiline fasta based on header
+```
+cat input.fasta| awk '/>SEQUENCE_HEADER_HERE/ {getline; while(!/>/) {getline}} 1' > output.fasta
 ```
