@@ -20,3 +20,8 @@ bioawk -c fastx '{ print $name, length($seq) }' inputsequences.fasta
 ```
 cat input.fasta| awk '/>SEQUENCE_HEADER_HERE/ {getline; while(!/>/) {getline}} 1' > output.fasta
 ```
+
+## Replace fasta headers with filename_#
+```
+for f in *; do awk '/^>/{print ">" FILENAME "_" (++i); next} 1' $f > ${f%}.names.fa; done
+```
