@@ -23,5 +23,5 @@ cat input.fasta| awk '/>SEQUENCE_HEADER_HERE/ {getline; while(!/>/) {getline}} 1
 
 ## Replace fasta headers with filename_#
 ```
-for f in *; do awk '/^>/{print ">" FILENAME "_" (++i); next} 1' $f > ${f%}.names.fa; done
+for f in *.fasta; do awk '/^>/{print ">" FILENAME "_" (++i); next} 1' $f > ${f%}.names.fasta; done
 ```
