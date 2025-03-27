@@ -29,3 +29,24 @@ cat input.fasta| awk '/>SEQUENCE_HEADER_HERE/ {getline; while(!/>/) {getline}} 1
 ```
 for f in *.fasta; do awk '/^>/{print ">" FILENAME "_" (++i); next} 1' $f > ${f%}.names.fasta; done
 ```
+## Add .pep extension to all files
+
+```for file in *; do
+  if [ -f "$file" ]; then
+    mv "$file" "$file.pep"
+  fi
+done
+```
+
+## Remove .pep extension (undo)
+```
+for file in *.pep; do
+  if [ -f "$file" ]; then
+    mv "$file" "${file%.pep}"
+  fi
+done
+```
+
+
+
+
